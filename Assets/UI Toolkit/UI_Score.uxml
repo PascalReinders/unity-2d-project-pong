@@ -1,0 +1,59 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UI_Score.uss?fileID=7433441132597879392&amp;guid=e7c07cbd2e536394f926f1116cd0b9b9&amp;type=3#UI_Score"/>
+    <ui:VisualElement name="explanation-container" style="flex-grow: 1; background-color: rgb(0, 0, 0); display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+        <ui:Label text="PONG" name="Header" class="Text Header"/>
+        <ui:Label text="HOW TO PLAY" name="How-To-Play" class="h2"/>
+        <ui:VisualElement name="exp-player-container" style="flex-grow: 1; height: auto; max-height: 15%; flex-direction: row; margin-top: 3%; margin-bottom: 2%;">
+            <ui:VisualElement name="exp-p1-container" style="flex-grow: 1; align-items: flex-start;">
+                <ui:Label text="PLAYER 1" name="Exp-P1" class="h3"/>
+                <ui:Label text="WASD" name="WASD" class="Exp-Player-Text"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="exp-p2-container" style="flex-grow: 1;">
+                <ui:Label text="PLAYER 2" name="Exp-P2" class="h3"/>
+                <ui:Label text="ARROWS" name="Arrows" class="Exp-Player-Text"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label text="THE FIRST PLAYER TO REACH 11 POINTS WINS." name="Win-condition" class="Text"/>
+        <ui:VisualElement name="rules-container" style="flex-grow: 1; margin-bottom: 5%; max-height: 5%;">
+            <ui:Label text="THE BALL SPEEDS UP WHEN IT HITS THE PADDLE A COUPLE OF TIMES." name="Rules2" class="Text"/>
+            <ui:Label text="DEFLECT THE BALL PAST YOUR OPPONENT&apos;S PADDLE TO SCORE A POINT." name="Rules1" class="Text"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="button-container" style="flex-grow: 1; justify-content: center; align-items: center; margin-bottom: 4%;">
+            <ui:Button text="UNDERSTOOD" name="understood-button" class="Button Button-Hover Pointer" style="width: 275px; min-width: auto; min-height: 70px; cursor: url(&quot;project://database/Assets/UI%20Toolkit/pointer-cursor.png?fileID=2800000&amp;guid=f25d9a2844ae8df4facf7bd29d8c8864&amp;type=3#pointer-cursor&quot;);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="name-container" style="flex-grow: 1; background-color: rgb(0, 0, 0); padding-top: 4%; display: flex; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+        <ui:Label text="ENTER PLAYER NAMES" name="Player-Names" class="h2"/>
+        <ui:VisualElement name="txt-field-container" style="flex-grow: 1; padding-top: 35px; flex-direction: row; max-height: 240px;">
+            <ui:VisualElement name="label-child-container1" style="flex-grow: 1; width: auto; max-height: none;">
+                <ui:Label text="PLAYER 1" name="Label-Name-P1" class="h3"/>
+                <ui:TextField label="" placeholder-text="PLAYER 1 NAME..." name="input-p1" class="pong-input"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="label-child-container2" style="flex-grow: 1; width: auto; max-height: none;">
+                <ui:Label text="PLAYER 2" name="Label-Name-P2" class="h3"/>
+                <ui:TextField label="" placeholder-text="PLAYER 2 NAME..." name="input-p2" class="pong-input"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="error-container" style="flex-grow: 1; max-height: 92px; -unity-text-align: middle-center; justify-content: center; display: flex;">
+            <ui:Label text="ERROR" name="error-message" class="Text Error" style="white-space: normal; -unity-paragraph-spacing: 0; display: none;"/>
+        </ui:VisualElement>
+        <ui:Button text="START" name="start-button" class="Start-Button Pointer"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="score-container" style="flex-grow: 1; flex-direction: row; justify-content: space-between; width: auto; align-items: stretch; align-content: flex-start; align-self: auto; height: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; display: none; flex-shrink: 1; margin-top: 30px; margin-right: 20px; margin-left: 20px; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+        <ui:Label text="PLAYER1" name="player1-score-name" class="Score-Player" style="min-width: 350px; max-width: 350px;"/>
+        <ui:VisualElement name="score-container" style="flex-grow: 1; flex-direction: row; justify-content: space-between; width: auto; max-width: 400px; align-self: auto; align-items: center;">
+            <ui:Label text="0" name="player1-score" class="Score"/>
+            <ui:Label text="0" name="player2-score" class="Score"/>
+        </ui:VisualElement>
+        <ui:Label text="PLAYER2&#10;" name="player2-score-name" class="Score-Player" style="min-width: 350px; -unity-text-align: upper-right;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="gameover-container" style="flex-grow: 1; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgb(0, 0, 0); padding-top: 30px; justify-content: space-evenly; padding-bottom: 70px; display: none;">
+        <ui:Label text="GAME OVER" name="game-over-label" class="Header"/>
+        <ui:Label text="PLACEHOLDER IS THE WINNER!" name="winner-label" class="h2" style="margin-right: 2px;"/>
+        <ui:Label text="THE FINAL SCORE IS 0 / 0" name="score-compare-label" class="h3"/>
+        <ui:VisualElement name="buttons" style="flex-grow: 1; flex-direction: row; justify-content: center; height: auto; max-height: 100px;">
+            <ui:Button text="EXIT" name="exit-button" class="game-over-button Pointer"/>
+            <ui:Button text="PLAY AGAIN" name="play-again-button" class="game-over-button Pointer"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
